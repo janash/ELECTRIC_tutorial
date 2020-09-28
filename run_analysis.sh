@@ -1,6 +1,6 @@
 #location of required codes
-DRIVER_LOC=/PATH/TO/ELECTRIC.py
-TINKER_LOC=/PATH/TO/DYNAMIC.X
+DRIVER_LOC=/home/janash/tinker-electric/ELECTRIC/ELECTRIC/ELECTRIC.py
+TINKER_LOC=/home/janash/tinker-electric/Tinker/build/tinker/source/dynamic.x
 
 #remove old files
 if [ -d work ]; then
@@ -22,6 +22,6 @@ ${TINKER_LOC} 1l2y -k noewald.key -mdi "-role ENGINE -name NO_EWALD -method TCP 
 
 
 #launch driver
-python ${DRIVER_LOC} -snap 1l2y_npt.arc -probes "78 93 94" -mdi "-role DRIVER -name driver -method TCP -port 8022" --byres 1l2y_solvated.pdb --equil 160 --stride 2 &
+python ${DRIVER_LOC} -snap 1l2y_npt.arc -probes "78 93 94" -mdi "-role DRIVER -name driver -method TCP -port 8022" --byres 1l2y_solvated.pdb --equil 120 --stride 2 &
 
 wait
